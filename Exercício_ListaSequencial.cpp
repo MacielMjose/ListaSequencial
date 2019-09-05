@@ -378,10 +378,10 @@ void altera_nodo( NODO *lista ){
  ************************************************/
 void consulta_nome( NODO lista )
 {
-	
 	     
    	char procuraNome[30]; // o nome nao terá mas que 30 char de acordo com definição da Struct
 	int index = 0;
+	int cont = 0;
 	
 	if(lista.f  == 0) //valida se a lista está vazia
 	{
@@ -401,20 +401,24 @@ void consulta_nome( NODO lista )
 				
 					if (strcmp(lista.info[index].nome,procuraNome) == 0) //verifica desde a primeira posição, comparando se o código da próxima é menor que o da posição atual
 						{
+							cont++;
 							printf("%s",procuraNome);	//exibe o nome consultado
 							getchar();		
 						}
-					if(index > lista.f)
+				/*	if(index > lista.f)
 						{
 							
 							printf("Nao encontrei o babilonia!");
-							
-						}								
+						}				
+				*/				
 				}   
 				
 			
 			}
-	
+	if (cont == 0){
+		printf("Registro não encontrado");
+		getchar();
+	              }
 }
 
 
